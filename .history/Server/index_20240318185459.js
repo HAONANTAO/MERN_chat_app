@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken";
 import cors from "cors";
 const app = express();
 // 跨域
-app.use(cors());
+app.use();
 
 // 使用 body-parser 中间件解析请求体
 app.use(bodyParser.json());
