@@ -8,10 +8,10 @@ const port = 5555;
 // const dotenv = dotenv;
 // 方便从env file拿到变量去nodejs
 dotenv.config();
-const DatabaseUrl = process.env.MONGODB_URL;
+const url = process.env.MONGODB_URL;
+console.log(url);
 
-mongoose.connect(DatabaseUrl);
-
+mongoose.connect(url);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });

@@ -11,7 +11,6 @@ dotenv.config();
 const DatabaseUrl = process.env.MONGODB_URL;
 
 mongoose.connect(DatabaseUrl);
-
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });

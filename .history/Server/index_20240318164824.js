@@ -10,8 +10,8 @@ const port = 5555;
 dotenv.config();
 const DatabaseUrl = process.env.MONGODB_URL;
 
-mongoose.connect(DatabaseUrl);
 
+mongoose.connect(DatabaseUrl);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
