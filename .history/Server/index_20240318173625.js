@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const findUser = await UserModel.findOne({ username });
-  if (findUser) {
+  if (FindUser) {
     res.json({ error: "already got this user!" });
   }
   const CreateUser = await UserModel.create({ username, password });
