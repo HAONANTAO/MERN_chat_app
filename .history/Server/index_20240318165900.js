@@ -4,12 +4,10 @@ import mongoose from "mongoose";
 import UserModel from "./models/User.js";
 import bodyParser from "body-parser";
 
+
 const app = express();
 // 自定义端点
 const port = 5555;
-// 使用 body-parser 中间件解析请求体
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // const dotenv = dotenv;
 // 方便从env file拿到变量去nodejs
