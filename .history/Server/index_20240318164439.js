@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 
 const app = express();
-// const dotenv = dotenv;
 // 方便从env file拿到变量去nodejs
 dotenv.config();
 
@@ -10,7 +9,6 @@ dotenv.config();
 const port = 5555;
 
 const url = process.env.MONGODB_URL;
-console.log(url);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });

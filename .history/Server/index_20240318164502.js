@@ -10,7 +10,6 @@ dotenv.config();
 const port = 5555;
 
 const url = process.env.MONGODB_URL;
-console.log(url);
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
