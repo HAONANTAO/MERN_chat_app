@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Register = () => {
   const [username, setUsername] = useState("");
@@ -21,7 +21,7 @@ const Register = () => {
           value={password}
           placeholder="input password..."
           className="block w-full rounded-sm p-2 mb-2"
-          onChange={(ev) => setPassword(ev.target.value)}></input>
+          onChange={(ev) => setPassword(ev.value)}></input>
         <button className="bg-blue-500 text-white block w-full rounded-sm">
           Register
         </button>
