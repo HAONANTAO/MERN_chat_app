@@ -12,6 +12,7 @@ const Register = () => {
       const user = await axios.post("/register", { username, password });
       // 为了注册之后存在上下文 到时候查一下 有就直接登录
       setLoggedInUsername(username);
+
       setId(user.data._id);
       console.log("good");
     } catch (error) {

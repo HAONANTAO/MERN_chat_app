@@ -1,12 +1,15 @@
+import Register from "./Register";
 import axios from "axios";
-import Routes from "./Routes";
-import { UserContextProvider } from "./UserContext";
+import { UserContext, UserContextProvider } from "./UserContext";
+import { useContext } from "react";
 function App() {
   // 给默认的地址
   axios.defaults.baseURL = "http://localhost:5555";
-
+  const { username } = useContext(UserContext);
+  console.log(username);
   return (
     <>
+      <div className="bg-red-500">test</div>
       <UserContextProvider>
         <Routes></Routes>
       </UserContextProvider>
