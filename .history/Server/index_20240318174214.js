@@ -5,6 +5,7 @@ import UserModel from "./models/User.js";
 import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import cors from "cors";
+
 const app = express();
 // 自定义端点
 const port = 5555;
@@ -31,7 +32,7 @@ app.post("/register", async (req, res) => {
     res.json({ error: "already got this user!" });
   }
   const CreateUser = await UserModel.create({ username, password });
-  jwt.sign({ userId: CreateUser._id }, process.env.JWT_SECRET);
+  jwt.sign({CreateUser});
   res.json(CreateUser);
 });
 

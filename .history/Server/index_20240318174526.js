@@ -31,7 +31,7 @@ app.post("/register", async (req, res) => {
     res.json({ error: "already got this user!" });
   }
   const CreateUser = await UserModel.create({ username, password });
-  jwt.sign({ userId: CreateUser._id }, process.env.JWT_SECRET);
+  jwt.sign({ userId: CreateUser._id },po);
   res.json(CreateUser);
 });
 
