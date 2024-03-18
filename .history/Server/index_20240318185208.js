@@ -9,8 +9,8 @@ const app = express();
 // 跨域
 app.use(
   cors({
-    origin: "*", // 允许所有来源
-  }),
+    origin: "*", // 允许的来源
+   credentials: true, // 允许发送凭据}),
 );
 
 // 使用 body-parser 中间件解析请求体

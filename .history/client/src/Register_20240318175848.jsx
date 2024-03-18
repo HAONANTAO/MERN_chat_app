@@ -1,19 +1,9 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const register = async (event) => {
-    event.preventDefault(); // 阻止表单默认提交行为
-
-    try {
-      await axios.post("/register", { username, password });
-      console.log("good");
-    } catch (error) {
-      console.log("bad", error);
-    }
-  };
+  const register = () => {};
   return (
     // 全局居中
     <div className="flex items-center h-screen bg-blue-50">

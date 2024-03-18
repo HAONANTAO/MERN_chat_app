@@ -6,12 +6,11 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const register = async (event) => {
     event.preventDefault(); // 阻止表单默认提交行为
-
     try {
       await axios.post("/register", { username, password });
-      console.log("good");
+      res.json({ msg: "successfully register user" });
     } catch (error) {
-      console.log("bad", error);
+      res.json({ err: "register post error" });
     }
   };
   return (

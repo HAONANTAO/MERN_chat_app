@@ -1,18 +1,14 @@
 import React, { useState } from "react";
-import axios from "axios";
 
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const register = async (event) => {
-    event.preventDefault(); // 阻止表单默认提交行为
-
+  const register = async () => {
     try {
-      await axios.post("/register", { username, password });
-      console.log("good");
-    } catch (error) {
-      console.log("bad", error);
-    }
+         await axios.post("/register", { username, password });
+         
+    } catch (error) {}
+ 
   };
   return (
     // 全局居中

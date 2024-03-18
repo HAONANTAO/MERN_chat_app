@@ -10,6 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: "*", // 允许所有来源
+    credentials: false, // 不发送凭据
   }),
 );
 

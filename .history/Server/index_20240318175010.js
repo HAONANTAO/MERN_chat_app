@@ -6,18 +6,13 @@ import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
 import cors from "cors";
 const app = express();
-// 跨域
-app.use(
-  cors({
-    origin: "*", // 允许所有来源
-  }),
-);
-
+// 自定义端点
+const port = 5555;
 // 使用 body-parser 中间件解析请求体
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-// 自定义端点
-const port = 5555;
+// 跨域
+app.use(cors());
 // const dotenv = dotenv;
 // 方便从env file拿到变量去nodejs
 dotenv.config();
@@ -29,9 +24,6 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/test", (req, res) => {
-  res.send("test");
-});
 // resgiter注册页面post请求
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -40,12 +32,8 @@ app.post("/register", async (req, res) => {
     res.json({ error: "already got this user!" });
   }
   const CreateUser = await UserModel.create({ username, password });
-  jwt.sign({ userId: CreateUser._id }, jwtSecret, (err, token) => {
-    if (err) {
-      throw err;
-    }
-    res.cookie("token", token).status(201).json("JWT ok");
-  });
+  jwt.sign({ userId: CreateUser._id }, jwtSecret).then(err, token));
+  res.json(CreateUser);
 });
 
 app.listen(port, () => {

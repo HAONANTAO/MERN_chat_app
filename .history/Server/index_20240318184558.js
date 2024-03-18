@@ -7,11 +7,7 @@ import jwt from "jsonwebtoken";
 import cors from "cors";
 const app = express();
 // 跨域
-app.use(
-  cors({
-    origin: "*", // 允许所有来源
-  }),
-);
+app.use(cors());
 
 // 使用 body-parser 中间件解析请求体
 app.use(bodyParser.json());
@@ -29,7 +25,7 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/test", (req, res) => {
+app.get("test", (req, res) => {
   res.send("test");
 });
 // resgiter注册页面post请求
