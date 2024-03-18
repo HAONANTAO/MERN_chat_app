@@ -9,10 +9,7 @@ const Register = () => {
     event.preventDefault(); // 阻止表单默认提交行为
 
     try {
-      const user = await axios.post("/register", { username, password });
-      setLoggedInUsername(username);
-
-      setId(user.data._id);
+      await axios.post("/register", { username, password });
       console.log("good");
     } catch (error) {
       console.log("bad", error);

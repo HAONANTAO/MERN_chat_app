@@ -7,10 +7,9 @@ function App() {
 
   return (
     <>
+    <UserContextProvider></UserContextProvider>
       <div className="bg-red-500">test</div>
-      <UserContextProvider>
-        <Register></Register>
-      </UserContextProvider>
+      <Register></Register>
     </>
   );
 }

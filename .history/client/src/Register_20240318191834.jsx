@@ -11,7 +11,7 @@ const Register = () => {
     try {
       const user = await axios.post("/register", { username, password });
       setLoggedInUsername(username);
-
+      console.log(data);
       setId(user.data._id);
       console.log("good");
     } catch (error) {

@@ -37,7 +37,7 @@ app.post("/register", async (req, res) => {
     if (err) {
       throw err;
     }
-    res.cookie("token", token).status(201).json(CreateUser);
+    res.cookie("token", token).status(201).json("JWT ok");
   });
 });
 
